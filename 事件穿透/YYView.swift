@@ -30,7 +30,7 @@ class YYView: UIView {
         //代码来自
         //http://stackoverflow.com/questions/33214508/how-do-i-get-the-rgb-value-of-a-pixel-using-cgcontext
         
-        var pixel:[CUnsignedChar] = [0]//,0,0,0]
+        var pixel:[CUnsignedChar] = [0,0,0,0]
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
@@ -46,7 +46,7 @@ class YYView: UIView {
 //        let red : CGFloat = CGFloat(pixel[0])/255.0
 //        let green : CGFloat = CGFloat(pixel[1])/255.0
 //        let blue : CGFloat = CGFloat(pixel[2])/255.0
-        let alpha : CGFloat = CGFloat(pixel[0])/255.0
+        let alpha : CGFloat = CGFloat(pixel[3])/255.0
 
         return alpha > 0.01
         
